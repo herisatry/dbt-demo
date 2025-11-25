@@ -5,3 +5,4 @@ sources:
     tables:
       - name: weather
       - name: pets
+      - name: bike
