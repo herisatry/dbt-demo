@@ -1,3 +1,9 @@
+{{
+    config(
+        materialized='table'
+    )
+}}
+
 WITH CTE AS (
     select
         to_date(to_timestamp(event_time)) as event_date,
