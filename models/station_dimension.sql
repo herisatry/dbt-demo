@@ -1,17 +1,14 @@
-{{
-    config(
-        materialized='table'
+{{ config(materialized="table") }}
+
+with
+    bike as (
+        select distinct
+            start_station_id as station_id,
+            start_station_name as station_name,
+            start_latitude as latitude,
+            start_longitude as longitude
+        from {{ source("demo", "bike") }}
     )
-}}
 
-WITH BIKE AS (
-    select
-    distinct
-    start_station_id as station_id,
-    start_station_name as station_name,
-    start_latitude as latitude,
-    start_longitude as longitude
-    FROM {{ source('demo', 'bike') }}
-)
-
-SELECT * FROM BIKE
+select *
+from bike
