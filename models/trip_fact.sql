@@ -1,7 +1,7 @@
 {{ config(materialized="table") }}
 
 with
-    bike as (
+    trip as (
         select distinct
             trip_id,
             date(started_at) as trip_date,
@@ -13,4 +13,4 @@ with
     )
 
 select *
-from bike
+from trip
