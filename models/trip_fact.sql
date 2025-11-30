@@ -8,7 +8,7 @@ with
             start_station_id,
             end_station_id,
             user_type,
-            DATEDIFF(second, started_at, ended_at) as trip_duration
+            DATEDIFF(second, started_at, ended_at) as trip_duration_seconds
         from {{ source("demo", "bike") }}
     )
 
