@@ -17,3 +17,4 @@ CASE
         ELSE 'AUTUMN'
         END
 {% endmacro %}
+
